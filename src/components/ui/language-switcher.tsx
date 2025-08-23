@@ -1,16 +1,16 @@
-import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 interface LanguageSwitcherProps {
   className?: string
 }
 
 export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
-  const [isEnglish, setIsEnglish] = useState(false)
+  const { language, setLanguage } = useLanguage()
 
   const toggleLanguage = () => {
-    setIsEnglish(!isEnglish)
+    setLanguage(language === 'zh' ? 'en' : 'zh')
   }
 
   return (
@@ -24,12 +24,12 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
       )}
     >
       <span className="relative z-10 font-medium">
-        {isEnglish ? "EN" : "中"}
+        {language === 'en' ? "EN" : "中"}
       </span>
       <div 
         className={cn(
           "absolute inset-0 bg-gradient-primary opacity-10 transition-opacity duration-300",
-          isEnglish ? "opacity-20" : "opacity-10"
+          language === 'en' ? "opacity-20" : "opacity-10"
         )}
       />
     </Button>

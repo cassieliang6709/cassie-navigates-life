@@ -3,15 +3,18 @@ import { ProjectCard } from "@/components/ui/project-card"
 import { SkillBadge } from "@/components/ui/skill-badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useLanguage } from "@/contexts/LanguageContext"
 import profilePhoto from "@/assets/profile-photo.jpg"
 import adhdAppMockup from "@/assets/adhd-app-mockup.jpg"
 import ecommerceBusiness from "@/assets/ecommerce-business.jpg"
 import inboundTourismProject from "@/assets/inbound-tourism-project.jpg"
 
 const Index = () => {
-  const techSkills = ['Python', 'SQL', 'JavaScript', 'HTML', 'CSS', 'React Native', 'Next.js', 'Go', 'Excel', 'PowerPoint', 'Photoshop']
-  const languageSkills = ['英语（流利）', '普通话（母语）']
-  const professionalSkills = ['产品设计', '用户研究', '数据分析', '电子商务', '审计与财务']
+  const { t } = useLanguage()
+  
+  const techSkills = t.skills.techSkills
+  const languageSkills = t.skills.languageSkills
+  const professionalSkills = t.skills.professionalSkills
 
   const contactInfo = [
     { icon: '📧', label: 'liangyue3666@gmail.com', href: 'mailto:liangyue3666@gmail.com' },
@@ -29,16 +32,16 @@ const Index = () => {
             <div className="flex-1 text-center lg:text-left space-y-6">
               <div className="space-y-4">
                 <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-hero bg-clip-text text-transparent animate-fade-in">
-                  梁悦 Cassie
+                  {t.hero.title}
                 </h1>
                 <p className="text-xl lg:text-2xl text-muted-foreground animate-slide-up">
-                  独立开发者 | 产品设计师 | 审计师
+                  {t.hero.subtitle}
                 </p>
               </div>
               
               <div className="space-y-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 <p className="text-lg text-foreground">
-                  Hi 👋 我是梁悦Cassie，双鱼座，ESTP，喜欢旅行，心理学知识和AI。在努力成为一个有生命力的人。
+                  {t.hero.description}
                 </p>
               </div>
               
@@ -48,20 +51,20 @@ const Index = () => {
                   className="bg-gradient-primary hover:shadow-medium transition-all duration-300"
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  查看我的项目
+                  {t.hero.viewProjects}
                 </Button>
                 <Button 
                   variant="outline" 
                   size="lg"
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  联系我
+                  {t.hero.contactMe}
                 </Button>
                 <Button 
                   variant="secondary" 
                   size="lg"
                 >
-                  查看我的简历
+                  {t.hero.viewResume}
                 </Button>
               </div>
             </div>
@@ -84,36 +87,33 @@ const Index = () => {
       <section id="about" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 bg-gradient-primary bg-clip-text text-transparent">
-            关于我
+            {t.about.title}
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="bg-gradient-card backdrop-blur-sm border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  ✨ 有趣的事实
+                  {t.about.funFacts.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground">
-                <p>• 出生并成长于新疆哈密</p>
-                <p>• 曾担任审计师、行研助理、战略研究和产品设计</p>
-                <p>• 爱好是旅行：去过日本、韩国和中国的20多个城市</p>
-                <p>• 今年希望继续探索：中国台湾、日本和新加坡</p>
-                <p>• 不祈求成功，但是希望有勇气面对一切困难</p>
+                {t.about.funFacts.items.map((item, index) => (
+                  <p key={index}>{item}</p>
+                ))}
               </CardContent>
             </Card>
 
             <Card className="bg-gradient-card backdrop-blur-sm border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  🎓 我妈妈想让你知道的事
+                  {t.about.achievements.title}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-muted-foreground">
-                <p>• 非常典型的理科生，高考理综和数学加起来扣的分小于语文一门，新疆理科高考660分/全省173名</p>
-                <p>• 大学非常努力学习中：在上海财经大学学习会计，获得过人民奖学金二等奖，三等奖，华为奖学金等</p>
-                <p>• 做过跨境电商，没有盈利，但是学会了如何和货代和供应商谈判，如何在亚马逊上控制CPC广告预算</p>
-                <p>• 转码半年：积极探索黑客松中，在advx上获得过最佳科技奖，在创业森林上获得过第二名，项目入驻梦想小镇</p>
+                {t.about.achievements.items.map((item, index) => (
+                  <p key={index}>{item}</p>
+                ))}
               </CardContent>
             </Card>
           </div>
@@ -124,35 +124,35 @@ const Index = () => {
       <section id="projects" className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            我的项目
+            {t.projects.title}
           </h2>
           <p className="text-center text-muted-foreground mb-12">
-            探索我近期的工作和创新项目
+            {t.projects.subtitle}
           </p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ProjectCard
               icon="📱"
-              title="正助 - ADHD情绪和任务管理应用"
-              description="一款针对ADHD人群的应用，提供情绪支持与任务管理的闭环解决方案，帮助用户更好地管理情绪波动和任务执行困难。"
+              title={t.projects.adhd.title}
+              description={t.projects.adhd.description}
               image={adhdAppMockup}
-              buttonText="查看商业计划书"
+              buttonText={t.projects.adhd.buttonText}
             />
             
             <ProjectCard
               icon="🛒"
-              title="电子商务业务"
-              description="在美国与加拿大市场运营电子商务业务，专注于产品开发、供应链管理和市场营销策略。"
+              title={t.projects.ecommerce.title}
+              description={t.projects.ecommerce.description}
               image={ecommerceBusiness}
-              buttonText="了解更多"
+              buttonText={t.projects.ecommerce.buttonText}
             />
             
             <ProjectCard
               icon="✈️"
-              title="我的入境游项目"
-              description="专注于为外国游客提供中国入境旅游服务，包括行程规划、文化体验和本地向导服务。"
+              title={t.projects.tourism.title}
+              description={t.projects.tourism.description}
               image={inboundTourismProject}
-              buttonText="查看项目"
+              buttonText={t.projects.tourism.buttonText}
               buttonLink="https://preview--hangzhou-hustle-hubs.lovable.app/"
             />
           </div>
@@ -163,13 +163,13 @@ const Index = () => {
       <section className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 bg-gradient-primary bg-clip-text text-transparent">
-            专业技能
+            {t.skills.title}
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             <Card className="bg-gradient-card backdrop-blur-sm border-border/50">
               <CardHeader>
-                <CardTitle>技术技能</CardTitle>
+                <CardTitle>{t.skills.tech}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -182,7 +182,7 @@ const Index = () => {
 
             <Card className="bg-gradient-card backdrop-blur-sm border-border/50">
               <CardHeader>
-                <CardTitle>语言能力</CardTitle>
+                <CardTitle>{t.skills.language}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -195,7 +195,7 @@ const Index = () => {
 
             <Card className="bg-gradient-card backdrop-blur-sm border-border/50">
               <CardHeader>
-                <CardTitle>专业领域</CardTitle>
+                <CardTitle>{t.skills.professional}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
@@ -213,10 +213,10 @@ const Index = () => {
       <section id="contact" className="py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            联系我
+            {t.contact.title}
           </h2>
           <p className="text-muted-foreground mb-12">
-            如果您对我的项目感兴趣，或者想要了解更多信息，欢迎通过以下方式联系我：
+            {t.contact.subtitle}
           </p>
           
           <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
@@ -241,7 +241,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-border/50 bg-muted/20">
         <div className="container mx-auto max-w-6xl text-center text-muted-foreground">
-          <p>© 2024 梁悦. 保留所有权利. 浙ICP备2025173001号</p>
+          <p>{t.footer.copyright}</p>
         </div>
       </footer>
     </div>

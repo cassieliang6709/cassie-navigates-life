@@ -1,12 +1,15 @@
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { LanguageSwitcher } from "@/components/ui/language-switcher"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 interface NavigationProps {
   className?: string
 }
 
 export function Navigation({ className }: NavigationProps) {
+  const { t } = useLanguage()
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -27,25 +30,25 @@ export function Navigation({ className }: NavigationProps) {
               onClick={() => scrollToSection('home')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              🏠 首页
+              {t.navigation.home}
             </button>
             <button 
               onClick={() => scrollToSection('projects')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              📂 项目
+              {t.navigation.projects}
             </button>
             <button 
               onClick={() => scrollToSection('about')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              👤 关于我
+              {t.navigation.about}
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
               className="text-foreground hover:text-primary transition-colors"
             >
-              📞 联系方式
+              {t.navigation.contact}
             </button>
           </div>
 
@@ -57,7 +60,7 @@ export function Navigation({ className }: NavigationProps) {
               onClick={() => scrollToSection('contact')}
               className="md:hidden"
             >
-              联系我
+              {t.hero.contactMe}
             </Button>
           </div>
         </div>
