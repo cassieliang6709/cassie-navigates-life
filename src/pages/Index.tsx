@@ -6,9 +6,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import profilePhoto from "@/assets/profile-photo.jpg"
 import adhdAppMockup from "@/assets/adhd-app-mockup.jpg"
 import ecommerceBusiness from "@/assets/ecommerce-business.jpg"
+import inboundTourismProject from "@/assets/inbound-tourism-project.jpg"
 
 const Index = () => {
-  const techSkills = ['Python', 'SQL', 'JavaScript', 'HTML', 'CSS', 'Excel', 'PowerPoint', 'Photoshop']
+  const techSkills = ['Python', 'SQL', 'JavaScript', 'HTML', 'CSS', 'React Native', 'Next.js', 'Go', 'Excel', 'PowerPoint', 'Photoshop']
   const languageSkills = ['英语（流利）', '普通话（母语）']
   const professionalSkills = ['产品设计', '用户研究', '数据分析', '电子商务', '审计与财务']
 
@@ -150,8 +151,9 @@ const Index = () => {
               icon="✈️"
               title="我的入境游项目"
               description="专注于为外国游客提供中国入境旅游服务，包括行程规划、文化体验和本地向导服务。"
+              image={inboundTourismProject}
               buttonText="查看项目"
-              buttonLink="https://lovable.dev/projects/f230d14d-d51d-4e62-b22f-ce6772a3241f"
+              buttonLink="https://preview--hangzhou-hustle-hubs.lovable.app/"
             />
           </div>
         </div>
