@@ -38,7 +38,7 @@ const Index = () => {
               
               <div className="space-y-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
                 <p className="text-lg text-foreground">
-                  Hi 👋 我是梁悦Cassie，双鱼座，ESTP，喜欢旅行，AI 和心理学知识。在努力成为一个有生命力的人。
+                  Hi 👋 我是梁悦Cassie，双鱼座，ESTP，喜欢旅行，心理学知识和AI。在努力成为一个有生命力的人。
                 </p>
               </div>
               
