@@ -22,94 +22,91 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section id="home" className="pt-20 pb-20 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center space-y-8 py-20">
-            <div className="space-y-6">
-              <h1 className="editorial-heading text-5xl lg:text-7xl font-bold text-foreground leading-tight animate-fade-in">
-                梁悦 Cassie
-              </h1>
-              <div className="editorial-divider"></div>
-              <p className="editorial-body text-xl lg:text-2xl text-muted-foreground animate-slide-up">
-                独立开发者 | 产品设计师 | 审计师
-              </p>
+      <section id="home" className="pt-20 pb-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="flex flex-col lg:flex-row items-center gap-12 py-16">
+            <div className="flex-1 text-center lg:text-left space-y-6">
+              <div className="space-y-4">
+                <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-hero bg-clip-text text-transparent animate-fade-in">
+                  梁悦 Cassie
+                </h1>
+                <p className="text-xl lg:text-2xl text-muted-foreground animate-slide-up">
+                  独立开发者 | 产品设计师 | 审计师
+                </p>
+              </div>
+              
+              <div className="space-y-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                <p className="text-lg text-foreground">
+                  Hi 👋 我是梁悦Cassie，双鱼座，ESTP，喜欢旅行，AI 和心理学知识。在努力成为一个有生命力的人。
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 animate-bounce-in" style={{ animationDelay: '0.4s' }}>
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-primary hover:shadow-medium transition-all duration-300"
+                  onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  查看我的项目
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  联系我
+                </Button>
+              </div>
             </div>
             
-            <div className="max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.2s' }}>
-              <div className="relative mb-8">
+            <div className="flex-1 flex justify-center animate-bounce-in" style={{ animationDelay: '0.6s' }}>
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-primary rounded-full blur-2xl opacity-20 scale-110"></div>
                 <img 
                   src={profilePhoto} 
                   alt="梁悦 Cassie" 
-                  className="w-32 h-32 rounded-full object-cover shadow-medium mx-auto border-2 border-border"
+                  className="relative w-80 h-80 rounded-full object-cover shadow-strong border-4 border-white/20"
                 />
               </div>
-              <p className="editorial-body text-lg text-foreground leading-relaxed">
-                Hi 👋 我是梁悦Cassie，双鱼座，ESTP，喜欢旅行，AI 和心理学知识。在努力成为一个有生命力的人。
-              </p>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-bounce-in" style={{ animationDelay: '0.4s' }}>
-              <Button 
-                size="lg" 
-                className="transition-smooth"
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                查看我的项目
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="transition-smooth"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                联系我
-              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 border-t border-border/30">
-        <div className="container mx-auto max-w-4xl">
-          <header className="text-center mb-16">
-            <h2 className="editorial-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              关于我
-            </h2>
-            <div className="editorial-divider"></div>
-          </header>
+      <section id="about" className="py-16 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 bg-gradient-primary bg-clip-text text-transparent">
+            关于我
+          </h2>
           
-          <div className="grid md:grid-cols-2 gap-12">
-            <Card className="bg-card border border-border shadow-soft transition-smooth hover:shadow-medium">
-              <CardHeader className="border-b border-border/30 pb-4">
-                <CardTitle className="editorial-heading text-xl font-semibold text-foreground">
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-gradient-card backdrop-blur-sm border-border/50">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
                   ✨ 有趣的事实
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
-                <div className="editorial-body space-y-4 text-muted-foreground">
-                  <p>• 出生并成长于新疆哈密</p>
-                  <p>• 曾担任审计师、行研助理、战略研究和产品设计</p>
-                  <p>• 爱好是旅行：去过日本、韩国和中国的20多个城市</p>
-                  <p>• 今年希望继续探索：中国台湾、日本和新加坡</p>
-                  <p>• 不祈求成功，但是希望有勇气面对一切困难</p>
-                </div>
+              <CardContent className="space-y-3 text-muted-foreground">
+                <p>• 出生并成长于新疆哈密</p>
+                <p>• 曾担任审计师、行研助理、战略研究和产品设计</p>
+                <p>• 爱好是旅行：去过日本、韩国和中国的20多个城市</p>
+                <p>• 今年希望继续探索：中国台湾、日本和新加坡</p>
+                <p>• 不祈求成功，但是希望有勇气面对一切困难</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-card border border-border shadow-soft transition-smooth hover:shadow-medium">
-              <CardHeader className="border-b border-border/30 pb-4">
-                <CardTitle className="editorial-heading text-xl font-semibold text-foreground">
+            <Card className="bg-gradient-card backdrop-blur-sm border-border/50">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
                   🎓 我妈妈想让你知道的事
                 </CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
-                <div className="editorial-body space-y-4 text-muted-foreground">
-                  <p>• 非常典型的理科生，但是大学误入了商科领域</p>
-                  <p>• 新疆理科高考173名，高考660分：数学143，理综270，英语135，语文112</p>
-                  <p>• 在上海财经大学学习会计，获得过人民奖学金，华为奖学金等</p>
-                  <p>• 做过跨境电商，但是最近在转行成为独立开发者</p>
-                </div>
+              <CardContent className="space-y-3 text-muted-foreground">
+                <p>• 非常典型的理科生，但是大学误入了商科领域</p>
+                <p>• 新疆理科高考173名，高考660分：数学143，理综270，英语135，语文112</p>
+                <p>• 在上海财经大学学习会计，获得过人民奖学金，华为奖学金等</p>
+                <p>• 做过跨境电商，但是最近在转行成为独立开发者</p>
               </CardContent>
             </Card>
           </div>
@@ -117,26 +114,22 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 bg-muted/20">
-        <div className="container mx-auto max-w-5xl">
-          <header className="text-center mb-16">
-            <h2 className="editorial-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              我的项目
-            </h2>
-            <div className="editorial-divider"></div>
-            <p className="editorial-body text-center text-muted-foreground max-w-2xl mx-auto">
-              探索我近期的工作和创新项目
-            </p>
-          </header>
+      <section id="projects" className="py-16 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-4 bg-gradient-primary bg-clip-text text-transparent">
+            我的项目
+          </h2>
+          <p className="text-center text-muted-foreground mb-12">
+            探索我近期的工作和创新项目
+          </p>
           
-          <div className="grid lg:grid-cols-2 gap-12 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ProjectCard
               icon="📱"
               title="正助 - ADHD情绪和任务管理应用"
               description="一款针对ADHD人群的应用，提供情绪支持与任务管理的闭环解决方案，帮助用户更好地管理情绪波动和任务执行困难。"
               image={adhdAppMockup}
               buttonText="查看商业计划书"
-              className="lg:col-span-1"
             />
             
             <ProjectCard
@@ -145,11 +138,8 @@ const Index = () => {
               description="在美国与加拿大市场运营电子商务业务，专注于产品开发、供应链管理和市场营销策略。"
               image={ecommerceBusiness}
               buttonText="了解更多"
-              className="lg:col-span-1"
             />
-          </div>
-          
-          <div className="max-w-2xl mx-auto">
+            
             <ProjectCard
               icon="👩‍💼"
               title="个人简历"
@@ -161,21 +151,18 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-4 border-t border-border/30">
-        <div className="container mx-auto max-w-4xl">
-          <header className="text-center mb-16">
-            <h2 className="editorial-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              专业技能
-            </h2>
-            <div className="editorial-divider"></div>
-          </header>
+      <section className="py-16 px-4 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl lg:text-4xl font-bold text-center mb-12 bg-gradient-primary bg-clip-text text-transparent">
+            专业技能
+          </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-card border border-border shadow-soft">
-              <CardHeader className="border-b border-border/30 pb-4">
-                <CardTitle className="editorial-heading text-lg font-semibold">技术技能</CardTitle>
+            <Card className="bg-gradient-card backdrop-blur-sm border-border/50">
+              <CardHeader>
+                <CardTitle>技术技能</CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {techSkills.map((skill) => (
                     <SkillBadge key={skill} skill={skill} category="tech" />
@@ -184,11 +171,11 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-card border border-border shadow-soft">
-              <CardHeader className="border-b border-border/30 pb-4">
-                <CardTitle className="editorial-heading text-lg font-semibold">语言能力</CardTitle>
+            <Card className="bg-gradient-card backdrop-blur-sm border-border/50">
+              <CardHeader>
+                <CardTitle>语言能力</CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {languageSkills.map((skill) => (
                     <SkillBadge key={skill} skill={skill} category="language" />
@@ -197,11 +184,11 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-card border border-border shadow-soft">
-              <CardHeader className="border-b border-border/30 pb-4">
-                <CardTitle className="editorial-heading text-lg font-semibold">专业领域</CardTitle>
+            <Card className="bg-gradient-card backdrop-blur-sm border-border/50">
+              <CardHeader>
+                <CardTitle>专业领域</CardTitle>
               </CardHeader>
-              <CardContent className="pt-6">
+              <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {professionalSkills.map((skill) => (
                     <SkillBadge key={skill} skill={skill} category="professional" />
@@ -214,26 +201,23 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-muted/20">
-        <div className="container mx-auto max-w-3xl text-center">
-          <header className="mb-16">
-            <h2 className="editorial-heading text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              联系我
-            </h2>
-            <div className="editorial-divider"></div>
-            <p className="editorial-body text-muted-foreground max-w-xl mx-auto">
-              如果您对我的项目感兴趣，或者想要了解更多信息，欢迎通过以下方式联系我：
-            </p>
-          </header>
+      <section id="contact" className="py-16 px-4">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
+            联系我
+          </h2>
+          <p className="text-muted-foreground mb-12">
+            如果您对我的项目感兴趣，或者想要了解更多信息，欢迎通过以下方式联系我：
+          </p>
           
-          <div className="grid sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {contactInfo.map((contact, index) => (
-              <Card key={index} className="bg-card border border-border shadow-soft hover:shadow-medium transition-smooth hover:-translate-y-1">
-                <CardContent className="p-8 text-center">
-                  <div className="text-4xl mb-6">{contact.icon}</div>
+              <Card key={index} className="bg-gradient-card backdrop-blur-sm border-border/50 hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+                <CardContent className="p-6 text-center">
+                  <div className="text-4xl mb-4">{contact.icon}</div>
                   <Button 
                     variant="link" 
-                    className="text-foreground hover:text-primary p-0 h-auto font-normal editorial-body"
+                    className="text-foreground hover:text-primary p-0 h-auto font-normal"
                     onClick={() => window.open(contact.href)}
                   >
                     {contact.label}
@@ -246,10 +230,9 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 border-t-2 border-border">
-        <div className="container mx-auto max-w-4xl text-center">
-          <div className="editorial-divider mb-6"></div>
-          <p className="editorial-body text-muted-foreground">© 2024 梁悦. 保留所有权利. 浙ICP备2025173001号</p>
+      <footer className="py-8 px-4 border-t border-border/50 bg-muted/20">
+        <div className="container mx-auto max-w-6xl text-center text-muted-foreground">
+          <p>© 2024 梁悦. 保留所有权利. 浙ICP备2025173001号</p>
         </div>
       </footer>
     </div>

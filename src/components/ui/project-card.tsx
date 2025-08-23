@@ -23,11 +23,11 @@ export function ProjectCard({
 }: ProjectCardProps) {
   return (
     <Card className={cn(
-      "group relative overflow-hidden bg-card border border-border shadow-soft hover:shadow-medium transition-smooth hover:-translate-y-1", 
+      "group relative overflow-hidden border-border/50 bg-gradient-card backdrop-blur-sm hover:shadow-medium transition-all duration-300 hover:-translate-y-2", 
       className
     )}>
       {image && (
-        <div className="aspect-[16/10] overflow-hidden border-b border-border/30">
+        <div className="aspect-video overflow-hidden">
           <img 
             src={image} 
             alt={title}
@@ -36,17 +36,17 @@ export function ProjectCard({
         </div>
       )}
       
-      <CardHeader className="space-y-3">
-        <div className="flex items-start space-x-3">
-          <span className="text-2xl mt-1">{icon}</span>
-          <CardTitle className="editorial-heading text-xl font-semibold text-foreground leading-tight">
+      <CardHeader>
+        <div className="flex items-center space-x-3">
+          <span className="text-2xl">{icon}</span>
+          <CardTitle className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
             {title}
           </CardTitle>
         </div>
       </CardHeader>
       
-      <CardContent className="space-y-6">
-        <CardDescription className="editorial-body text-muted-foreground leading-relaxed">
+      <CardContent className="space-y-4">
+        <CardDescription className="text-muted-foreground leading-relaxed">
           {description}
         </CardDescription>
         
@@ -55,7 +55,7 @@ export function ProjectCard({
             variant="outline" 
             size="sm"
             onClick={() => buttonLink && window.open(buttonLink, '_blank')}
-            className="w-full transition-smooth"
+            className="w-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
           >
             {buttonText}
           </Button>
