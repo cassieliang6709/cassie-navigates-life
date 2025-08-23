@@ -1,8 +1,10 @@
-# Welcome to your Lovable project
+# Cassie Navigates Life - 个人作品集网站
 
-## Project info
+## 项目信息
 
-**URL**: https://lovable.dev/projects/306d5fe2-5383-4563-bd54-e7380c1f89cf
+**GitHub Pages URL**: https://cassieliang6709.github.io/cassie-navigates-life/
+
+**Lovable URL**: https://lovable.dev/projects/306d5fe2-5383-4563-bd54-e7380c1f89cf
 
 ## How can I edit this code?
 
