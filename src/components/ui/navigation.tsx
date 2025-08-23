@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { LanguageSwitcher } from "@/components/ui/language-switcher"
 
 interface NavigationProps {
   className?: string
@@ -48,14 +49,17 @@ export function Navigation({ className }: NavigationProps) {
             </button>
           </div>
 
-          <Button 
-            variant="outline" 
-            size="sm"
-            onClick={() => scrollToSection('contact')}
-            className="md:hidden"
-          >
-            联系我
-          </Button>
+          <div className="flex items-center space-x-3">
+            <LanguageSwitcher />
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => scrollToSection('contact')}
+              className="md:hidden"
+            >
+              联系我
+            </Button>
+          </div>
         </div>
       </div>
     </nav>
