@@ -56,6 +56,12 @@ const Index = () => {
                 >
                   联系我
                 </Button>
+                <Button 
+                  variant="secondary" 
+                  size="lg"
+                >
+                  查看我的简历
+                </Button>
               </div>
             </div>
             
@@ -141,10 +147,11 @@ const Index = () => {
             />
             
             <ProjectCard
-              icon="👩‍💼"
-              title="个人简历"
-              description="查看我的详细教育背景、工作经历、技能和项目经验。"
-              buttonText="查看简历"
+              icon="✈️"
+              title="我的入境游项目"
+              description="专注于为外国游客提供中国入境旅游服务，包括行程规划、文化体验和本地向导服务。"
+              buttonText="查看项目"
+              buttonLink="https://lovable.dev/projects/f230d14d-d51d-4e62-b22f-ce6772a3241f"
             />
           </div>
         </div>
