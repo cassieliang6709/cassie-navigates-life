@@ -63,7 +63,7 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  onClick={() => window.open('/resume.pdf', '_blank')}
+                  onClick={() => window.open('https://resume-hcpvbkbzs-cassieliang6709s-projects.vercel.app', '_blank')}
                 >
                   {t.hero.viewResume}
                 </Button>
