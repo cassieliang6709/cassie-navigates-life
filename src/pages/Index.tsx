@@ -63,7 +63,7 @@ const Index = () => {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  onClick={() => window.open('https://resume-hcpvbkbzs-cassieliang6709s-projects.vercel.app', '_blank')}
+                  onClick={() => window.open('/liangyue-pro-shortened.html', '_blank')}
                 >
                   {t.hero.viewResume}
                 </Button>
@@ -153,7 +153,7 @@ const Index = () => {
               description={t.projects.tourism.description}
               image={inboundTourismProject}
               buttonText={t.projects.tourism.buttonText}
-              buttonLink="https://preview--hangzhou-hustle-hubs.lovable.app/"
+              buttonLink="https://walkwith.liangyue.site/"
             />
           </div>
         </div>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>梁悦 - 个人简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'SimSun', '宋体', serif;
+            line-height: 1.3;
+            color: #000;
+            background: #fff;
+            padding: 0;
+            font-size: 10pt;
+        }
+        
+        .resume-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            background: white;
+            min-height: 11in;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 15pt;
+            padding-bottom: 8pt;
+            border-bottom: 1.5pt solid #000;
+        }
+        
+        .name {
+            font-size: 16pt;
+            font-weight: bold;
+            margin-bottom: 6pt;
+            letter-spacing: 1.5pt;
+        }
+        
+        .contact-info {
+            font-size: 9pt;
+            margin-bottom: 3pt;
+        }
+        
+        .section-title {
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 12pt;
+            margin-bottom: 6pt;
+            padding-bottom: 1pt;
+            border-bottom: 0.8pt solid #000;
+            letter-spacing: 0.8pt;
+        }
+        
+        .section-item {
+            margin-bottom: 10pt;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3pt;
+        }
+        
+        .item-title {
+            font-weight: bold;
+            font-size: 10pt;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .item-subtitle {
+            font-style: italic;
+            font-size: 9pt;
+            margin-bottom: 1pt;
+        }
+        
+        .item-location {
+            font-size: 9pt;
+            text-align: right;
+        }
+        
+        .item-date {
+            font-size: 9pt;
+        }
+        
+        .details {
+            margin-left: 0;
+            font-size: 9pt;
+        }
+        
+        .details li {
+            margin-bottom: 2pt;
+            list-style: none;
+            position: relative;
+            padding-left: 10pt;
+        }
+        
+        .details li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .course-list, .award-list {
+            margin: 3pt 0;
+            font-size: 9pt;
+        }
+        
+        .gpa {
+            font-weight: bold;
+        }
+        
+        .skills-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 12pt;
+            margin-top: 6pt;
+        }
+        
+        .skill-category {
+            margin-bottom: 6pt;
+        }
+        
+        .skill-category strong {
+            font-size: 9pt;
+        }
+        
+        .project-item {
+            margin-bottom: 8pt;
+        }
+        
+        .project-title {
+            font-weight: bold;
+            font-size: 10pt;
+            margin-bottom: 1pt;
+        }
+        
+        .project-role {
+            font-style: italic;
+            font-size: 8pt;
+            margin-bottom: 2pt;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-links {
+            margin-top: 3pt;
+            font-size: 9pt;
+        }
+        
+        @media print {
+            body {
+                font-size: 9pt;
+            }
+            .resume-container {
+                box-shadow: none;
+                padding: 0.4in;
+            }
+        }
+        
+        @page {
+            size: letter;
+            margin: 0.4in;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header">
+            <div class="name">梁悦</div>
+            <div class="contact-info">电话: +86 13122900609 | 邮箱: liangyue3666@gmail.com</div>
+            <div class="social-links">
+                <a href="https://www.xiaohongshu.com/user/profile/5b471ce54eacab67d0c34f15">自媒体账号：梁悦 cassie</a> | 
+                <a href="https://www.xiaoyuzhoufm.com/podcast/61058130d8dd6e8d8f87205b">播客：Pause此刻悦读</a> | 
+                <a href="https://work.liangyue.site/">个人网站</a>
+            </div>
+        </div>
+        
+        <div class="section-title">教育背景</div>
+        <div class="section-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">上海财经大学 - 会计学学士</div>
+                </div>
+                <div class="item-date">2019 - 2023</div>
+            </div>
+            <div class="details">
+                <div class="gpa">GPA: 3.52/4.00（前20%）</div>
+                <div class="course-list"><strong>核心课程:</strong> 概率论，Python，会计信息系统，金融机构与金融市场，投资学，会计学原理</div>
+                <div class="award-list"><strong>奖项:</strong> 全国大学生数学建模竞赛二等奖（2020年）；人民奖学金二等奖&三等奖（10%，2019&2020）</div>
+            </div>
+        </div>
+        
+        <div class="section-title">工作经历</div>
+        <div class="section-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title"><a href="helping.jpg" target="_blank">「正在帮助」微信小程序AI应用</a> - 全栈开发</div>
+                </div>
+                <div class="item-date">2025 - 至今</div>
+            </div>
+            <ul class="details">
+                <li>集合Todo List和CBT心理学的心理健康工具，通过启动，专注，和反思三个模块的心理工具帮助用户管理情绪和习惯（如：每日反思日记，思维扭转，心灵指引等）</li>
+                <li>运用AI辅助开发工具(Cursor, Claude Code、Gemini Cli)完成全栈开发，实现AI对话、任务拆解与习惯跟踪、CBT工具等核心功能</li>
+            </ul>
+        </div>
+        
+        <div class="section-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">量越（杭州）电子商务有限公司 - 电子商务创始人（美国与加拿大市场）（全职）</div>
+                </div>
+                <div class="item-date">2024 - 2025</div>
+            </div>
+            <ul class="details">
+                <li>从零开始建立亚马逊店铺，创建厨房收纳和烘焙品牌，推出超过5款产品，首年收入超过10,000美元</li>
+                <li>与供应商谈判改善产品质量，提高产品利润率，并与设计师合作改进包装与商品详情页，提升销售转化率20%</li>
+            </ul>
+        </div>
+        
+        <div class="section-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">德勤 - 审计与鉴证助理</div>
+                </div>
+                <div class="item-date">2023 - 2024</div>
+            </div>
+            <ul class="details">
+                <li>为在港美交易所上市的跨国客户进行审计，包括Ferrari、Loro Piana、君实生物、万物新生等</li>
+                <li>利用SQL、Excel对费用和固定资产等会计科目进行抽样分析，减少抽样时间20%，完成审计底稿</li>
+            </ul>
+        </div>
+        
+        <div class="section-title">项目经历</div>
+        
+        <div class="project-item">
+            <div class="project-title"><a href="https://hero-journey-web.lovable.app/" target="_blank">becoming</a> 心理健康工具-队长（7人小组）获创业森林二等奖 </div>
+            <ul class="details">
+                                 <li>结合AI agents、todo-list和游戏天赋系统，帮助用户无痛完成日常任务并获得奖章。</li>
+                                <li>作为开发人员和产品经理，从0到1在1天内完成MVP上线，技术栈：React Native + Supabase，<a href="https://hero-journey-web.lovable.app/" target="_blank">MVP网站</a>，<a href="https://mp.weixin.qq.com/s/dNpkw1dDyptgUvzMHWlT6g" target="_blank">相关文章</a>，<a href="https://github.com/cassieliang6709/resume/blob/main/becoming.pptx" target="_blank">商业计划书</a></li>
+            </ul>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-title">visocode-AI视频工具开发者</div>
+            <ul class="details">
+                                 <li>获得AdventureX ClackYAI赛道最佳科技奖，开发提问到视频的AI教学工具 </li>
+                                 <li>作为后端开发人员，利用python和flask，通过Gemini Pro 2.5 + Manim框架实现Code based Video来提升视频质量，预计11月上线</li>
+            </ul>
+        </div>
+        
+        <div class="section-title">实习经历</div>
+        
+        <div class="section-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">美团优选 - 业务分析实习生</div>
+                </div>
+                <div class="item-date">2022</div>
+            </div>
+            <ul class="details">
+                <li>独立使用SQL编制西南地区市场周销售报告，分析销售趋势和用户行为，为区域运营提供数据支撑</li>
+                <li>评估促销和营销活动效果，识别团长渗透率不足的地区，并提出对应策略</li>
+            </ul>
+        </div>
+        
+        <div class="section-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">KnowYourself（心理健康创业公司） - 产品经理实习生</div>
+                </div>
+                <div class="item-date">2021 - 2022</div>
+            </div>
+            <ul class="details">
+                <li>优化茶话会聊天室功能，设计实时互动功能（表情反应、话题投票和用户连麦），提升房间互动率35%</li>
+                <li>撰写产品需求文档，与UI/UX团队协作完成界面设计，确保产品需求准确传达</li>
+            </ul>
+        </div>
+        
+        <div class="section-item">
+            <div class="item-header">
+                <div>
+                    <div class="item-title">盒马鲜生 - 阿里巴巴集团 - 产品运营实习生</div>
+                </div>
+                <div class="item-date">2021</div>
+            </div>
+            <ul class="details">
+                <li>利用Excel和SQL处理交易数据，确保准确及时的日常报告，提高运营效率15%</li>
+                <li>审查和优化超过50,000条推荐匹配数据，与算法团队合作改进推荐系统，提升用户参与度15%</li>
+            </ul>
+        </div>
+        
+        <div class="section-title">技能与兴趣</div>
+        <div class="section-item">
+            <ul class="details">
+                <li><strong>技术技能:</strong> Python, SQL, JavaScript, HTML/CSS, Photoshop, Excel, PowerPoint</li>
+                <li><strong>语言能力:</strong> 英语（托福：102/120），普通话（母语）</li>
+                <li><strong>爱好:</strong> 旅行（日本，韩国，中国20多个城市），心理学知识，阅读</li>
+                <li><strong>社交媒体:</strong> 小红书：梁悦cassie | 播客：Pause此刻悦读</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 
