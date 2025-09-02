@@ -1,12 +1,7 @@
 import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
 import { useLanguage } from "@/contexts/LanguageContext"
 
-interface LanguageSwitcherProps {
-  className?: string
-}
-
-export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
+export function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage()
 
   const toggleLanguage = () => {
@@ -15,23 +10,12 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
 
   return (
     <Button
-      variant="outline"
+      variant="ghost"
       size="sm"
       onClick={toggleLanguage}
-      className={cn(
-        "relative overflow-hidden border-primary/20 hover:border-primary/40 transition-all duration-300",
-        className
-      )}
+      className="h-8 px-3 text-xs font-medium text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
     >
-      <span className="relative z-10 font-medium">
-        {language === 'en' ? "EN" : "中"}
-      </span>
-      <div 
-        className={cn(
-          "absolute inset-0 bg-gradient-primary opacity-10 transition-opacity duration-300",
-          language === 'en' ? "opacity-20" : "opacity-10"
-        )}
-      />
+      {language === 'zh' ? 'EN' : '中文'}
     </Button>
   )
 }

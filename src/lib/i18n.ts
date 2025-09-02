@@ -14,13 +14,27 @@ export interface Translations {
   // About Section
   about: {
     title: string
-    funFacts: {
+    timeline: {
       title: string
-      items: string[]
+      items: Array<{
+        icon: string
+        title: string
+        description: string
+        year: string
+        category: 'education' | 'career' | 'achievement' | 'personal'
+      }>
     }
-    achievements: {
-      title: string
-      items: string[]
+    cards: {
+      personalTraits: {
+        icon: string
+        title: string
+        items: string[]
+      }
+      growthJourney: {
+        icon: string
+        title: string
+        items: string[]
+      }
     }
   }
   
@@ -88,24 +102,89 @@ export const translations: Record<Language, Translations> = {
     },
     about: {
       title: "关于我",
-      funFacts: {
-        title: "✨ 有趣的事实",
+      timeline: {
+        title: "🚀 我的成长历程",
         items: [
-          "• 出生并成长于新疆哈密",
-          "• 曾担任审计师、行研助理、战略研究和产品设计",
-          "• 爱好是旅行：去过日本、韩国和中国的20多个城市",
-          "• 今年希望继续探索：中国台湾、日本和新加坡",
-          "• 不祈求成功，但是希望有勇气面对一切困难"
+          {
+            icon: "🏠",
+            title: "出生成长",
+            description: "出生并成长于新疆哈密",
+            year: "2000-2018",
+            category: "personal"
+          },
+          {
+            icon: "🎓",
+            title: "高考成就",
+            description: "非常典型的理科生，高考理综和数学加起来扣的分小于语文一门，新疆理科高考660分/全省173名",
+            year: "2018",
+            category: "achievement"
+          },
+          {
+            icon: "📚",
+            title: "大学学习",
+            description: "大学非常努力学习中：在上海财经大学学习会计，获得过人民奖学金二等奖，三等奖，华为奖学金等",
+            year: "2018-2022",
+            category: "education"
+          },
+          {
+            icon: "💼",
+            title: "职业经历",
+            description: "曾担任审计师、行研助理、战略研究和产品设计",
+            year: "2022-2023",
+            category: "career"
+          },
+          {
+            icon: "🛒",
+            title: "跨境电商",
+            description: "做过跨境电商，没有盈利，但是学会了如何和货代和供应商谈判，如何在亚马逊上控制CPC广告预算",
+            year: "2023",
+            category: "career"
+          },
+          {
+            icon: "✈️",
+            title: "旅行探索",
+            description: "爱好是旅行：去过日本、韩国和中国的20多个城市，今年希望继续探索：中国台湾、日本和新加坡",
+            year: "2020-2024",
+            category: "personal"
+          },
+          {
+            icon: "💻",
+            title: "转码探索",
+            description: "转码半年：积极探索黑客松中，在advx上获得过最佳科技奖，在创业森林上获得过第二名，项目入驻梦想小镇",
+            year: "2024",
+            category: "achievement"
+          },
+          {
+            icon: "🌟",
+            title: "人生哲学",
+            description: "不祈求成功，但是希望有勇气面对一切困难",
+            year: "持续",
+            category: "personal"
+          }
         ]
       },
-      achievements: {
-        title: "🎓 我妈妈想让你知道的事",
-        items: [
-          "• 非常典型的理科生，高考理综和数学加起来扣的分小于语文一门，新疆理科高考660分/全省173名",
-          "• 大学非常努力学习中：在上海财经大学学习会计，获得过人民奖学金二等奖，三等奖，华为奖学金等",
-          "• 做过跨境电商，没有盈利，但是学会了如何和货代和供应商谈判，如何在亚马逊上控制CPC广告预算",
-          "• 转码半年：积极探索黑客松中，在advx上获得过最佳科技奖，在创业森林上获得过第二名，项目入驻梦想小镇"
-        ]
+      cards: {
+        personalTraits: {
+          icon: "✨",
+          title: "个人特质",
+          items: [
+            "出生并成长于新疆哈密",
+            "曾担任审计师、行研助理、战略研究和产品设计",
+            "爱好是旅行：去过日本、韩国和中国的20多个城市",
+            "今年希望继续探索：中国台湾、日本和新加坡",
+            "不祈求成功，但是希望有勇气面对一切困难"
+          ]
+        },
+        growthJourney: {
+          icon: "🎓",
+          title: "成长历程",
+          items: [
+            "非常典型的理科生，高考理综和数学加起来扣的分小于语文一门，新疆理科高考660分/全省173名",
+            "大学非常努力学习中：在上海财经大学学习会计，获得过人民奖学金二等奖，三等奖，华为奖学金等",
+            "做过跨境电商，没有盈利，但是学会了如何和货代和供应商谈判，如何在亚马逊上控制CPC广告预算",
+            "转码半年：积极探索黑客松中，在advx上获得过最佳科技奖，在创业森林上获得过第二名，项目入驻梦想小镇"
+          ]
+        }
       }
     },
     projects: {
@@ -161,31 +240,96 @@ export const translations: Record<Language, Translations> = {
     },
     about: {
       title: "About Me",
-      funFacts: {
-        title: "✨ Fun Facts",
+      timeline: {
+        title: "🚀 My Journey",
         items: [
-          "• Born and raised in Hami, Xinjiang",
-          "• Previously worked as auditor, research assistant, strategic research and product design",
-          "• Hobby is travel: visited Japan, Korea and over 20 cities in China",
-          "• This year hoping to explore: Taiwan, Japan and Singapore",
-          "• Not praying for success, but hoping to have courage to face all difficulties"
+          {
+            icon: "🏠",
+            title: "Birth & Growth",
+            description: "Born and raised in Hami, Xinjiang",
+            year: "2000-2018",
+            category: "personal"
+          },
+          {
+            icon: "🎓",
+            title: "College Entrance Exam",
+            description: "Very typical science student, college entrance exam science and math combined lost fewer points than Chinese alone, Xinjiang science college entrance exam 660 points/173rd in province",
+            year: "2018",
+            category: "achievement"
+          },
+          {
+            icon: "📚",
+            title: "University Studies",
+            description: "Studied very hard at university: studied accounting at Shanghai University of Finance and Economics, received People's Scholarship second prize, third prize, Huawei Scholarship and other honors",
+            year: "2018-2022",
+            category: "education"
+          },
+          {
+            icon: "💼",
+            title: "Professional Experience",
+            description: "Previously worked as auditor, research assistant, strategic research and product design",
+            year: "2022-2023",
+            category: "career"
+          },
+          {
+            icon: "🛒",
+            title: "Cross-border E-commerce",
+            description: "Did cross-border e-commerce, didn't make profit, but learned how to negotiate with freight forwarders and suppliers, how to control CPC ad budget on Amazon",
+            year: "2023",
+            category: "career"
+          },
+          {
+            icon: "✈️",
+            title: "Travel Exploration",
+            description: "Hobby is travel: visited Japan, Korea and over 20 cities in China, this year hoping to explore: Taiwan, Japan and Singapore",
+            year: "2020-2024",
+            category: "personal"
+          },
+          {
+            icon: "💻",
+            title: "Coding Journey",
+            description: "Started coding half a year ago: actively exploring hackathons, won Best Tech Award at advx, second place at Startup Forest, project entered Dream Town",
+            year: "2024",
+            category: "achievement"
+          },
+          {
+            icon: "🌟",
+            title: "Life Philosophy",
+            description: "Not praying for success, but hoping to have courage to face all difficulties",
+            year: "Ongoing",
+            category: "personal"
+          }
         ]
       },
-      achievements: {
-        title: "🎓 What My Mom Wants You to Know",
-        items: [
-          "• Very typical science student, college entrance exam science and math combined lost fewer points than Chinese alone, Xinjiang science college entrance exam 660 points/173rd in province",
-          "• Studied very hard in university: studied accounting at Shanghai University of Finance and Economics, received People's Scholarship second prize, third prize, Huawei Scholarship, etc.",
-          "• Did cross-border e-commerce, didn't make profit, but learned how to negotiate with freight forwarders and suppliers, how to control CPC ad budget on Amazon",
-          "• Coding for half a year: actively exploring hackathons, won Best Tech Award on advx, won second place on Startup Forest, project settled in Dream Town"
-        ]
+      cards: {
+        personalTraits: {
+          icon: "✨",
+          title: "Personal Traits",
+          items: [
+            "Born and raised in Hami, Xinjiang",
+            "Previously worked as auditor, research assistant, strategic research and product design",
+            "Hobby is travel: visited Japan, Korea and over 20 cities in China",
+            "This year hoping to explore: Taiwan, Japan and Singapore",
+            "Not praying for success, but hoping to have courage to face all difficulties"
+          ]
+        },
+        growthJourney: {
+          icon: "🎓",
+          title: "Growth Journey",
+          items: [
+            "Very typical science student, college entrance exam science and math combined lost fewer points than Chinese alone, Xinjiang science college entrance exam 660 points/173rd in province",
+            "Studied very hard at university: studied accounting at Shanghai University of Finance and Economics, received People's Scholarship second prize, third prize, Huawei Scholarship and other honors",
+            "Did cross-border e-commerce, didn't make profit, but learned how to negotiate with freight forwarders and suppliers, how to control CPC ad budget on Amazon",
+            "Started coding half a year ago: actively exploring hackathons, won Best Tech Award at advx, second place at Startup Forest, project entered Dream Town"
+          ]
+        }
       }
     },
     projects: {
       title: "My Projects",
       subtitle: "Explore my recent work and innovative projects",
       adhd: {
-        title: "ZhengZhu - ADHD Emotion and Task Management App",
+        title: "ZhengZhu - ADHD Emotion & Task Management App",
         description: "An app designed for people with ADHD, providing a closed-loop solution for emotional support and task management, helping users better manage emotional fluctuations and task execution difficulties.",
         buttonText: "View Business Plan"
       },
@@ -196,7 +340,7 @@ export const translations: Record<Language, Translations> = {
       },
       tourism: {
         title: "My Inbound Tourism Project",
-        description: "Focusing on providing inbound tourism services for foreign visitors to China, including itinerary planning, cultural experiences and local guide services.",
+        description: "Focused on providing inbound tourism services for foreign visitors to China, including itinerary planning, cultural experiences and local guide services.",
         buttonText: "View Project"
       }
     },
@@ -211,7 +355,7 @@ export const translations: Record<Language, Translations> = {
     },
     contact: {
       title: "Contact Me",
-      subtitle: "If you're interested in my projects or want to learn more, feel free to contact me through the following ways:"
+      subtitle: "If you're interested in my projects or want to learn more, feel free to reach out through the following ways:"
     },
     navigation: {
       home: "🏠 Home",
@@ -225,6 +369,6 @@ export const translations: Record<Language, Translations> = {
   }
 }
 
-export const getTranslation = (language: Language): Translations => {
+export function getTranslation(language: Language): Translations {
   return translations[language]
 }

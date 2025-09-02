@@ -6,7 +6,6 @@ interface ProjectCardProps {
   title: string
   description: string
   icon: string
-  image?: string
   buttonText?: string
   buttonLink?: string
   className?: string
@@ -16,49 +15,48 @@ export function ProjectCard({
   title, 
   description, 
   icon, 
-  image, 
   buttonText, 
   buttonLink,
   className 
 }: ProjectCardProps) {
   return (
     <Card className={cn(
-      "group relative overflow-hidden border-border/50 bg-gradient-card backdrop-blur-sm hover:shadow-medium transition-all duration-300 hover:-translate-y-2", 
+      "group relative overflow-hidden border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-all duration-300", 
       className
     )}>
-      {image && (
-        <div className="aspect-video overflow-hidden">
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
-      )}
-      
-      <CardHeader>
-        <div className="flex items-center space-x-3">
-          <span className="text-2xl">{icon}</span>
-          <CardTitle className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-            {title}
-          </CardTitle>
+      {/* Header with Icon and Title */}
+      <CardHeader className="pb-3">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700">
+            <span className="text-lg text-blue-600 dark:text-blue-400">{icon}</span>
+          </div>
+          <div className="flex-1">
+            <CardTitle className="text-base font-semibold text-gray-900 dark:text-white">
+              {title}
+            </CardTitle>
+          </div>
         </div>
       </CardHeader>
       
-      <CardContent className="space-y-4">
-        <CardDescription className="text-muted-foreground leading-relaxed">
+      {/* Content */}
+      <CardContent className="pt-0 space-y-3">
+        {/* Description */}
+        <CardDescription className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
           {description}
         </CardDescription>
         
+        {/* Button - Right Aligned */}
         {buttonText && (
-          <Button 
-            variant="outline" 
-            size="sm"
-            onClick={() => buttonLink && window.open(buttonLink, '_blank')}
-            className="w-full hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-          >
-            {buttonText}
-          </Button>
+          <div className="flex justify-end">
+            <Button 
+              variant="outline" 
+              size="sm"
+              onClick={() => buttonLink && window.open(buttonLink, '_blank')}
+              className="text-xs border-blue-200 text-blue-600 hover:bg-blue-50 dark:border-blue-700 dark:text-blue-400 dark:hover:bg-blue-900/20"
+            >
+              {buttonText}
+            </Button>
+          </div>
         )}
       </CardContent>
     </Card>
