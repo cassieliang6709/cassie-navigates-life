@@ -55,7 +55,7 @@ const Index = () => {
                   variant="outline" 
                   size="sm"
                   className="border-gray-300 hover:bg-gray-50 px-6"
-                  onClick={() => window.open('/liangyue-pro-shortened.html', '_blank')}
+                  onClick={() => window.open('/resume_onepage.pdf', '_blank')}
                 >
                   {t.hero.viewResume}
                 </Button>
